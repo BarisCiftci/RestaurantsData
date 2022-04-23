@@ -31,7 +31,7 @@ class DetailViewController: UIViewController {
     }
     
     func updateUserInterface() {
-        statusLabel.text = statusItem.status
+        statusLabel.text = statusItem.status?.uppercased()
         
         if statusItem.status == "closed" {
             statusLabel.textColor = .red
