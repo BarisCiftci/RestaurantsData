@@ -19,10 +19,22 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var deliveryCostsLabel: UILabel!
     @IBOutlet weak var minCostLabel: UILabel!
     
+    var nameAndStatus: Restaurant!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if nameAndStatus == nil {
+            nameAndStatus = Restaurant()
+        }
+        
+        updateUserInterface()
+    }
+    
+    func updateUserInterface() {
+        statusLabel.text = nameAndStatus.status
+        restaurantsNameLabel.text = nameAndStatus.name
+        
     }
     
 
