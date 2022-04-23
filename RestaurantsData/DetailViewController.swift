@@ -32,6 +32,14 @@ class DetailViewController: UIViewController {
     
     func updateUserInterface() {
         statusLabel.text = statusItem.status
+        
+        if statusItem.status == "closed" {
+            statusLabel.textColor = .red
+        } else if statusItem.status == "order ahead" {
+            statusLabel.textColor = .orange
+        } else {
+            statusLabel.textColor = .systemGreen
+        }
         restaurantsNameLabel.text = nameItem.name
     //  bestMatchLabel.text = sortingValuesItem.bestMatch
         

@@ -34,6 +34,8 @@ class ListViewController: UIViewController {
             destination.statusItem = restaurants.restaurantArray[selectedIndexPath.row]
             destination.sortingValuesItem = restaurants.restaurantArray[selectedIndexPath.row].sortingValues
         }
+        
+    
     }
     
     
@@ -48,6 +50,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = restaurants.restaurantArray[indexPath.row].name
         cell.detailTextLabel?.text = restaurants.restaurantArray[indexPath.row].status
+
         return cell
         
     }
