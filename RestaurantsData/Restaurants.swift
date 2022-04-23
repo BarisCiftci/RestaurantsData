@@ -13,10 +13,6 @@ class Restaurants {
         var restaurants: [Restaurant]
     }
     
-    struct Restaurant: Codable {
-        var name = ""
-        var status = ""
-    }
     
     let urlString = "https://raw.githubusercontent.com/ercanduman/VisualizeRestaurants/master/app/src/main/assets/sample_android.json"
     var restaurantArray: [Restaurant] = []
