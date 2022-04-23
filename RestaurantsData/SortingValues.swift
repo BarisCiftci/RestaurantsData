@@ -18,3 +18,15 @@ struct SortingValues: Codable {
     var minCost: Int
     
 }
+
+var sortingValuesArray: [SortingValues] = []
+
+
+
+extension SortingValues: CustomStringConvertible {
+    var description: String {
+        "\(bestMatch)"
+    }
+    
+}
+ 

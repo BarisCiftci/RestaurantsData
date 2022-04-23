@@ -19,21 +19,22 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var deliveryCostsLabel: UILabel!
     @IBOutlet weak var minCostLabel: UILabel!
     
-    var nameAndStatus: Restaurant!
+    var nameItem: Restaurant!
+    var statusItem: Restaurant!
+    var sortingValuesItem: SortingValues!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if nameAndStatus == nil {
-            nameAndStatus = Restaurant()
-        }
         
         updateUserInterface()
     }
     
     func updateUserInterface() {
-        statusLabel.text = nameAndStatus.status
-        restaurantsNameLabel.text = nameAndStatus.name
+        statusLabel.text = statusItem.status
+        restaurantsNameLabel.text = nameItem.name
+    //  bestMatchLabel.text = sortingValuesItem.bestMatch
+        
         
     }
     
