@@ -12,6 +12,8 @@ class ListViewController: UIViewController {
     
     var restaurants = Restaurants()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
