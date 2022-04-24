@@ -34,9 +34,9 @@ class DetailViewController: UIViewController {
         statusLabel.text = statusItem.status?.uppercased()
         
         if statusItem.status == "closed" {
-            statusLabel.textColor = .red
+            statusLabel.textColor = .systemRed
         } else if statusItem.status == "order ahead" {
-            statusLabel.textColor = .orange
+            statusLabel.textColor = .systemOrange
         } else {
             statusLabel.textColor = .systemGreen
         }
