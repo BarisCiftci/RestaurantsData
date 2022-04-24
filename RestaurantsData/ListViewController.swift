@@ -50,6 +50,15 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = restaurants.restaurantArray[indexPath.row].name
         cell.detailTextLabel?.text = restaurants.restaurantArray[indexPath.row].status
+        cell.imageView?.image = UIImage(named: "statusClosed")
+        
+        if restaurants.restaurantArray[indexPath.row].status == "open"{
+           cell.imageView?.image = UIImage(named: "statusOpen")
+        } else if restaurants.restaurantArray[indexPath.row].status == "closed" {
+            cell.imageView?.image = UIImage(named: "statusClosed")
+        } else {
+            cell.imageView?.image = UIImage(named: "StatusOrderAhead")
+        }
 
         return cell
         
