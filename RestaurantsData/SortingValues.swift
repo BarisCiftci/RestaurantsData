@@ -25,7 +25,7 @@ var sortingValuesArray: [SortingValues] = []
 
 extension SortingValues: CustomStringConvertible {
     var description: String {
-        "\(bestMatch)"
+        "\(bestMatch)\(newest)\(ratingAverage)\(distance)\(popularity)\(averageProductPrice)\(deliveryCosts)\(minCost)"
     }
     
 }

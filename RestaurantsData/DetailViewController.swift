@@ -41,8 +41,14 @@ class DetailViewController: UIViewController {
             statusLabel.textColor = .systemGreen
         }
         restaurantsNameLabel.text = nameItem.name
-    //  bestMatchLabel.text = sortingValuesItem.bestMatch
-        
+        bestMatchLabel.text = sortingValuesItem.bestMatch.description
+        newestLabel.text = sortingValuesItem.newest.description
+        ratingAverageLabel.text = sortingValuesItem.ratingAverage.description
+        distanceLabel.text = sortingValuesItem.distance.description
+        popularityLabel.text = sortingValuesItem.popularity.description
+        averageProductPriceLabel.text = sortingValuesItem.averageProductPrice.description
+        deliveryCostsLabel.text = sortingValuesItem.deliveryCosts.description
+        minCostLabel.text = sortingValuesItem.minCost.description
         
     }
     
