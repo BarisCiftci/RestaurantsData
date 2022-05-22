@@ -19,6 +19,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var deliveryCostsLabel: UILabel!
     @IBOutlet weak var minCostLabel: UILabel!
     
+    //ToDo:
     var nameItem: Restaurant!
     var statusItem: Restaurant!
     var sortingValuesItem: SortingValues!
@@ -27,19 +28,12 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         
-        updateUserInterface()
+        setLabelsText()
+        updateStatusColor()
     }
     
-    func updateUserInterface() {
+    func setLabelsText() {
         statusLabel.text = statusItem.status?.uppercased()
-        
-        if statusItem.status == "closed" {
-            statusLabel.textColor = .systemRed
-        } else if statusItem.status == "order ahead" {
-            statusLabel.textColor = .systemOrange
-        } else {
-            statusLabel.textColor = .systemGreen
-        }
         restaurantsNameLabel.text = nameItem.name
         bestMatchLabel.text = sortingValuesItem.bestMatch.description
         newestLabel.text = sortingValuesItem.newest.description
@@ -52,15 +46,14 @@ class DetailViewController: UIViewController {
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateStatusColor() {
+        if statusItem.status == "closed" {
+            statusLabel.textColor = .systemRed
+        } else if statusItem.status == "order ahead" {
+            statusLabel.textColor = .systemOrange
+        } else {
+            statusLabel.textColor = .systemGreen
+        }
     }
-    */
 
 }

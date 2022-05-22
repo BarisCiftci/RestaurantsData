@@ -52,6 +52,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.detailTextLabel?.text = restaurants.restaurantArray[indexPath.row].status
         cell.imageView?.image = UIImage(named: "statusClosed")
         
+        //toDo: update logic
         if restaurants.restaurantArray[indexPath.row].status == "open"{
            cell.imageView?.image = UIImage(named: "statusOpen")
         } else if restaurants.restaurantArray[indexPath.row].status == "closed" {
