@@ -24,6 +24,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        sortingValuesItem = restaurantItem.sortingValues
         
         setLabelsText()
         updateStatusColor()

@@ -30,14 +30,11 @@ class ListViewController: UIViewController {
         if segue.identifier == "ShowDetail" {
             let destination = segue.destination as! DetailViewController
             let selectedIndexPath = tableView.indexPathForSelectedRow!
-            destination.restaurantItem = restaurants.restaurantArray[selectedIndexPath.row]
-            destination.sortingValuesItem = restaurants.restaurantArray[selectedIndexPath.row].sortingValues
+            
+            let selectedRestaurant = restaurants.restaurantArray[selectedIndexPath.row]
+            destination.restaurantItem = selectedRestaurant
         }
-        
-    
     }
-    
-    
 }
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
