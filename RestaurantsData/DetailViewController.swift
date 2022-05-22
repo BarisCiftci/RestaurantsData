@@ -19,22 +19,19 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var deliveryCostsLabel: UILabel!
     @IBOutlet weak var minCostLabel: UILabel!
     
-    //ToDo:
-    var nameItem: Restaurant!
-    var statusItem: Restaurant!
+    var restaurantItem: Restaurant!
     var sortingValuesItem: SortingValues!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         setLabelsText()
         updateStatusColor()
     }
     
     func setLabelsText() {
-        statusLabel.text = statusItem.status?.uppercased()
-        restaurantsNameLabel.text = nameItem.name
+        statusLabel.text = restaurantItem.status?.uppercased()
+        restaurantsNameLabel.text = restaurantItem.name
         bestMatchLabel.text = sortingValuesItem.bestMatch.description
         newestLabel.text = sortingValuesItem.newest.description
         ratingAverageLabel.text = sortingValuesItem.ratingAverage.description
@@ -47,12 +44,12 @@ class DetailViewController: UIViewController {
     }
     
     func updateStatusColor() {
-        if statusItem.status == "closed" {
-            statusLabel.textColor = .systemRed
-        } else if statusItem.status == "order ahead" {
-            statusLabel.textColor = .systemOrange
-        } else {
+        if restaurantItem.status == "open" {
             statusLabel.textColor = .systemGreen
+        } else if restaurantItem.status == "closed" {
+            statusLabel.textColor = .systemRed
+        } else {
+            statusLabel.textColor = .systemOrange
         }
     }
 
