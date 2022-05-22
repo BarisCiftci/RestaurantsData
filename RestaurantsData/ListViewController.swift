@@ -42,24 +42,30 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         return restaurants.restaurantArray.count
     }
     
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = restaurants.restaurantArray[indexPath.row].name
-        cell.detailTextLabel?.text = restaurants.restaurantArray[indexPath.row].status
+        let selectedRestaurant = restaurants.restaurantArray[indexPath.row]
+        let selectedRestaurantStatus = selectedRestaurant.status
+        
+        cell.textLabel?.text = selectedRestaurant.name
+        cell.detailTextLabel?.text = selectedRestaurantStatus
         cell.imageView?.image = UIImage(named: "statusClosed")
         
-        //toDo: update logic
-        if restaurants.restaurantArray[indexPath.row].status == "open"{
-           cell.imageView?.image = UIImage(named: "statusOpen")
-        } else if restaurants.restaurantArray[indexPath.row].status == "closed" {
+        setStatusImageViewColor(selectedRestaurantStatus, cell)
+        
+        return cell
+    }
+    
+    fileprivate func setStatusImageViewColor(_ selectedRestaurantStatus: String?, _ cell: UITableViewCell) {
+        
+        if selectedRestaurantStatus == "open"{
+            cell.imageView?.image = UIImage(named: "statusOpen")
+        } else if selectedRestaurantStatus == "closed" {
             cell.imageView?.image = UIImage(named: "statusClosed")
         } else {
             cell.imageView?.image = UIImage(named: "StatusOrderAhead")
         }
-
-        return cell
-        
     }
-    
-    
 }

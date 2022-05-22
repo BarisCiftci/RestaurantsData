@@ -53,5 +53,5 @@ class DetailViewController: UIViewController {
             statusLabel.textColor = .systemOrange
         }
     }
-
+    
 }
